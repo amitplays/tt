@@ -1,0 +1,9 @@
+.card {
+	text-align: left !important;
+	margin-left: 10px !important;
+	margin-right: 10px !important;
+}
+.Jumbo {
+	background-color: black !important;
+	color: rgb(253, 251, 251);
+}
