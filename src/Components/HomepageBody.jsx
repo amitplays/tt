@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Flip from "react-reveal/Flip";
+import 'font-awesome/css/font-awesome.css'
+import Fade  from "react-reveal/Fade";
 import {
   ListGroupItem,
   Card,
@@ -28,33 +29,36 @@ class HomePageBody extends Component {
       <div className="mainBody">
         <HomeBanner> </HomeBanner>
         <Container>
-          <h4> Why Choose us ? </h4>
+        <i class="fa fa-shield-alt"/>
+          <h4> Why Choose us ?  </h4>
           <br></br>
           <Row fluid>
             <Col sm className="row justify-content-center">
-              <Flip top>
+              <Fade bottom>
                 <Card
-                  bg="secondary"
-                  text="white"
-                  border="primary"
+                  bg="dark"
+                  border="dark"
+                  text="black"
                   style={{ width: "15rem" }}
                 >
-                  <Card.Header>Quick Resolution</Card.Header>
+                  <Card.Header> Quick Resolution</Card.Header>
                   <Card.Body>
                     <Card.Text>
-                      Fast Response To Requests & Critical Response Time
-                      Guaranteed.
+                      Secure all your home devices.
+                      <i class="fa fa-shield-alt"/>
                     </Card.Text>
+                  {/*<Card.Img variant="bottom"  src={require("./safe.svg")} />*/}
+                  <Button className="bannerBtn" style={{float:"right", margin:"20px"}} variant="secondary">Learn More</Button>
                   </Card.Body>
                 </Card>
-              </Flip>
+              </Fade>
             </Col>
             <Col sm className="row justify-content-center">
-              <Flip top>
+              <Fade bottom>
                 <Card
                   bg="dark"
                   text="white"
-                  border="primary"
+                  border="dark"
                   style={{ width: "15rem" }}
                 >
                   <Card.Header>Committed to Quality</Card.Header>
@@ -63,16 +67,17 @@ class HomePageBody extends Component {
                       We will help you instal all your software and hardware
                       upgradations.
                     </Card.Text>
+                    <Button className="bannerBtn" style={{float:"right", margin:"20px"}} variant="secondary">Learn More</Button>
                   </Card.Body>
                 </Card>
-              </Flip>
+              </Fade>
             </Col>
             <Col sm className="row justify-content-center">
-              <Flip top>
+              <Fade bottom>
                 <Card
-                  bg="secondary"
+                  bg="dark"
                   text="white"
-                  border="primary"
+                  border="dark"
                   style={{ width: "15rem" }}
                 >
                   <Card.Header>Low-cost Home Service</Card.Header>
@@ -81,9 +86,10 @@ class HomePageBody extends Component {
                       Our In-Home service cost is more affordable than most
                       competitors !
                     </Card.Text>
+                    <Button className="bannerBtn" style={{float:"right", margin:"20px"}} variant="secondary">Learn More</Button>
                   </Card.Body>
                 </Card>
-              </Flip>
+              </Fade>
             </Col>
           </Row>
         </Container>
@@ -95,7 +101,10 @@ class HomePageBody extends Component {
         <br />
         <hr></hr>
         <Container fluid>
-          <Image src={require("./tb.jpg")} fluid></Image>
+          <div className="HomepageBodyImageDiv">
+          <Image src={require("./headerIllustration.png")} fluid/>
+          <Button className="bannerBtn" style={{float:"right", margin:"20px"}} variant="outline-light">Learn More</Button>
+          </div>
         </Container>
       </div>
     );

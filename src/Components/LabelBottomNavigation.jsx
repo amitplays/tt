@@ -12,7 +12,7 @@ class Header extends Component {
     return (
       <Navbar style={{ display: "block" }} sticky="bottom" expand="sm">
         <sub>
-          <Table bordered responsive hover variant="dark">
+          <Table bordered responsive hover variant="light">
             <thead>
               <tr>
                 <th>Terms & Conditions</th>

@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
+import '../Components/Components.css'
+import fireDb from "../firebase"
 import ReactBootstrap, {
   Col,
-  Row,
+  Badge,
   Button,
   Card,
   Jumbotron,
@@ -11,110 +13,86 @@ import ReactBootstrap, {
 } from "react-bootstrap";
 import LabelBottomNavigation from "./LabelBottomNavigation";
 import Header from "./Header";
+import { initializeApp } from "firebase";
 
-class ContactForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { validated: false };
+const  ContactForm = () => {
+
+  const intialValues = {
+    FullName : "",
+    Mobile : "",
+    Email : "",
+    ServiceRequired : ""
   }
+
+  var [values, setValues] = useState(intialValues);
+  // defining anonymous function
+  const handleInputChange = e => {
+    var {name, value} = e.target;
+    setValues({
+      ...values,
+      [name]: value
+    })
+    console.log(value)
+  }
+
+  const handleFormSubmit = e => {
+    e.preventDefault();
+    
+    fireDb.child('Contacts').push(
+      values,
+      err => {
+        if(err)
+        console.log(err)
+      }
+    )}
+    var link = <a href={'FAQs'}>Agree to Terms & Conditions</a>;
+
   // Contact Us button Method
-  render() {
-    const { validated } = this.state;
     return (
       <div className="ModalBody">
         <Header></Header>
-        <Jumbotron fluid>
+        <Jumbotron className="JumbotronCustom" fluid>
           <h1>Contact us for a Free-Estimate !</h1>
           <p>
             All in-Store services will include a 30 day Customer Satisfaction
             Guarantee.
           </p>
         </Jumbotron>
-        {/*  this is the card for the social media components  */}
-        <Card>
-          <Card.Header as="h5">Social Media Queries</Card.Header>
-          <Card.Body>
-            <Card.Title>
-              Get in touch with us for a quick quote using your social media
-              accounts.
-            </Card.Title>
-            <Card.Text>Following are our social media handles. </Card.Text>
-            <Container className="row justify-content-center" fluid>
-              <Button
-                style={{ margin: "5px" }}
-                href="/Services"
-                variant="success"
-              >
-                WhatsApp
-              </Button>{" "}
-              <Button
-                style={{ margin: "5px" }}
-                href="/Services"
-                variant="danger"
-              >
-                Intagram
-              </Button>{" "}
-              <Button
-                style={{ margin: "5px" }}
-                href="/Services"
-                variant="warning"
-              >
-                Snapchat
-              </Button>{" "}
-              <Button
-                style={{ margin: "5px" }}
-                href="/Services"
-                variant="primary"
-              >
-                Facebook
-              </Button>{" "}
-              <Button
-                style={{ margin: "5px" }}
-                href="/Services"
-                variant="secondary"
-                href="tel:+900300400"
-              >
-                Call Us !
-              </Button>{" "}
-            </Container>
-          </Card.Body>
-        </Card>
         <hr></hr>
-
         <Container>
           {/* ------------------------ From Starts Here ---------------------------- */}
-          <Card bg="dark" text="white">
+
+          <Card bg="light" text="dark">
             <Card.Header>
-              Fill the form below and we will get in touch with you..
+            <Jumbotron >
+             <h5> Fill the form below and we will get in touch with you..</h5>
+            </Jumbotron>
             </Card.Header>
             <Card.Body>
               <Form
                 noValidate
                 className="Form"
-                validated={validated}
-                onSubmit={e => this.handleSubmit(e)}
+                onSubmit={handleFormSubmit}
               >
                 <Form.Row>
-                  <Form.Group as={Col} md="4" controlId="validationCustom01">
+                  <Form.Group as={Col} md="6" controlId="validationCustom01">
+
                     <Form.Label>Full Name</Form.Label>
                     <Form.Control
-                      required
                       type="text"
+                      name="FullName"
+                      onChange={handleInputChange}
                       placeholder="Full name"
+                      value={values.FullName}
                     />
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                  </Form.Group>
-                  <Form.Group as={Col} md="4" controlId="validationCustom02">
-                    <Form.Label>Age</Form.Label>
-                    <Form.Control required type="number" placeholder="Age" />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                   </Form.Group>
                   <Form.Group
                     as={Col}
-                    md="4"
+                    md="6"
                     controlId="validationCustomUsername"
                   >
-                    <Form.Label>Instagram Username</Form.Label>
+                    <Form.Label>Email Address</Form.Label>
                     <InputGroup>
                       <InputGroup.Prepend>
                         <InputGroup.Text id="inputGroupPrepend">
@@ -123,8 +101,11 @@ class ContactForm extends React.Component {
                       </InputGroup.Prepend>
                       <Form.Control
                         type="email"
-                        placeholder="or your Email"
+                        placeholder="Email Id"
                         aria-describedby="inputGroupPrepend"
+                        name="Email"
+                        onChange={handleInputChange}
+                        value={values.Email}
                         required
                       />
                       <Form.Control.Feedback type="invalid">
@@ -135,26 +116,31 @@ class ContactForm extends React.Component {
                 </Form.Row>
                 <Form.Row>
                   <Form.Group as={Col} md="6" controlId="validationCustom03">
-                    <Form.Label>Things you are good with</Form.Label>
+                    <Form.Label>I need help with</Form.Label>
                     <Form.Control
                       as="select"
                       type="text"
+                      name="ServiceRequired"
                       placeholder="Choose.."
+                      value={values.ServiceRequired}
+
                       required
                     >
                       {" "}
-                      <option>I am good with Numbers</option>
-                      <option>I am good with Chess</option>
-                      <option>I am good with X</option>
-                      <option>I am good with Y</option>
+                      <option>I want to get my Laptop/Desktop Repaired</option>
+                      <option>I want to get my network devices secured</option>
+                      <option>I want a privacy check on my device</option>
+                      <option>I want to talk and discuss my issues</option>
                     </Form.Control>
                   </Form.Group>
                   <Form.Group as={Col} md="3" controlId="validationCustom04">
+
                     <Form.Label>Profession</Form.Label>
                     <Form.Control
                       as="select"
                       type="text"
                       placeholder="Profession"
+                      onSubmit={e => this.handleSubmit(e)}
                       required
                     >
                       {" "}
@@ -165,13 +151,18 @@ class ContactForm extends React.Component {
                     </Form.Control>
                   </Form.Group>
                   <Form.Group as={Col} md="3" controlId="validationCustom05">
+
                     <Form.Label>Contact</Form.Label>
                     <Form.Control
                       min="1"
                       max="10"
                       type="number"
+                      name="Mobile"
+                      onChange={handleInputChange}
                       placeholder="Contact"
                       required
+                      value={values.Mobile}
+
                     />
                     <Form.Control.Feedback type="invalid">
                       Please provide a valid Contact.
@@ -180,30 +171,16 @@ class ContactForm extends React.Component {
                 </Form.Row>
                 <Form.Row>
                   <Form.Group as={Col} md="6">
-                    <Form.Check
+                    <Form.Check 
                       required
-                      label="Do you smoke Weed ? "
+                      label={link}
                       feedback="You must answer before submitting."
-                    />
-                  </Form.Group>
-                  <Form.Group as={Col} md="6">
-                    <Form.Check
-                      required
-                      label="Do you drink Alcohol ? "
-                      feedback="You must answer before submitting."
-                    />
-                  </Form.Group>
-                  <Form.Group as={Col} md="12">
-                    <Form.Check
-                      required
-                      label="Agree to terms and conditions"
-                      feedback="You must agree before submitting."
                     />
                   </Form.Group>
                 </Form.Row>
-                <Button variant="secondary" type="submit">
+                <Button variant="success" type="submit" value="Save">
                   Send
-                </Button>
+                </Button>{" "}<Badge variant="warning"> You should be 18 or above to ask for a service at home</Badge>
               </Form>
             </Card.Body>
           </Card>
@@ -213,6 +190,5 @@ class ContactForm extends React.Component {
       </div>
     );
   }
-}
 
 export default ContactForm;

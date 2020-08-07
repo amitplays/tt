@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import FAQs from "./Components/FAQs";
 import AboutUs from "./Components/AboutUs";
+import AdminPanel from "./Components/AdminPanel";
 import Services from "./Components/Services";
 import ContactForm from "./Components/ContactForm";
 import "./App.css";
@@ -13,10 +14,10 @@ function App() {
       <Router>
         <Route path="/ContactForm" component={ContactForm} />
         <Route path="/Home" component={Home} />
+        <Route path="/AdminPanel" component={AdminPanel} />
         <Route path="/AboutUs" component={AboutUs} />
         <Route path="/FAQs" component={FAQs} />
         <Route path="/Services" component={Services} />
-        {/* <Route path="/FAQs" component={FAQs} /> */}
       </Router>
     </div>
   );

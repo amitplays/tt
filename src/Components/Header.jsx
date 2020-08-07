@@ -39,7 +39,7 @@ class Header extends Component {
             </Button>
 
             <Nav className="mr-auto" />
-            <Nav>
+            <Nav className="navigationMenuLinks">
               <Nav.Link href="/FAQs">FaQs</Nav.Link>
               <Nav.Link href="/AboutUs">About Us</Nav.Link>
               <Nav.Link href="/Services">Services</Nav.Link>

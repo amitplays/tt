@@ -16,20 +16,22 @@ import {
 export default function SimpleCard() {
 	return (
 		<div className="mainBody">
-			{/* <Image width="100%" src={require("./banner.jpg")} fluid /> */}
-
+			 {/*<Image width="100%" src={require("./banner.PNG")} fluid />*/} 
+			 <br />
+			 
 			<Carousel>
 				<Carousel.Item>
+				<Card.Img variant="top" src="" />
 					<Jumbotron className="Jumbo" fluid>
-						<h1>Toronto Techie </h1>
+						<h1>Complete Home and Individual Privacy Service	 </h1>
 						<br />
 						<h5>For a stressfree in-Home Computer Assistance </h5>
 						<br />
+							<Button  variant="outline-light">See Packages</Button>
 					</Jumbotron>
 					<Carousel.Caption>
 						<p className="content">
-							The Extremes of Good and Evil Cicero, written in 45 BC. This book
-							is very popular during the Renaissance.
+							Toronto Computer Repair Services
 						</p>
 					</Carousel.Caption>
 				</Carousel.Item>
@@ -39,11 +41,11 @@ export default function SimpleCard() {
 						<br />
 						<h5>For a cheap in-Home Computer Assistance </h5>
 						<br />
+						<Button  variant="outline-light">See Packages</Button>
 					</Jumbotron>
 					<Carousel.Caption>
 						<p className="content">
-							The Extremes of Good and Evil Cicero, written in 45 BC. This book
-							is very popular during the Renaissance.
+							Toronto Computer Repair Services
 						</p>
 					</Carousel.Caption>
 				</Carousel.Item>

@@ -8,8 +8,6 @@ class Home extends Component {
     return (
       <div className="Home">
         <Header />
-        <br></br>
-        <br></br>
         <HomePageBody />
         <br></br>
         <LabelBottomNavigation></LabelBottomNavigation>

@@ -1,33 +1,67 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  src: local('Montserrat-Light'), url(./Components/Fonts/Montserrat-Light.ttf) format('opentype');
+  font-family: 'Montserrat-Light';
   color: white;
+
+}
+.Home{
+  background-color: rgb(255, 255, 255);
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+  font-family: 'Open Sans';
+ src: local('Montserrat-Light'), url(./Components/Fonts/Montserrat-Light.ttf) format('opentype');
+  font-family: 'Montserrat-Light';
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navigationMenuLinks{
+  color: blue !important;
+}
+
+
+
+.NavigationBarBody{
+  background-color: #282c34 !important;
+
+	background-image: url("./Components/headerIllustration.png");
+}
+.navbar {
+	background-color: #000000b8 !important;	
+}
+.JumbotronCustom {
+	background-color: black !important;
+	color: rgb(253, 251, 251);
+}
+.Jumbo {
+	background-color: black !important;
+	color: rgb(253, 251, 251);
+}
+/* .card {
+	background-color: rgb(255, 255, 255) !important;
+	color: rgb(0, 0, 0);
+} */
+
+.container {
+	max-width: 960px !important;
+}
+
+.content {
+	text-emphasis: left;
+}
+.NavigationBarBody{
+	text-align: center !important;
+  display: inline !important;
+	background-image: url("./Components/assets/bannertech.jpg");
+}
+
+.HomepageBodyImageDiv{
+	position: relative;
+	width: 100%;
+}
+.bannerBtn{
+	position: absolute;
+	top: 90%;
+	right: 0%;
+	transform: translate(-50%, -50%);
 }

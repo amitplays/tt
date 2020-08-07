@@ -37,14 +37,14 @@ class FAQs extends Component {
 					<Tab eventKey="home" title="In-Home Services">
                     <br></br>
 						<Container fluid>
-							<Table size="lg" variant="dark"  striped bordered hover responsive>
+							<Table size="lg" variant="outline-warning"  striped bordered hover responsive>
 								<thead>
 									<tr>
 										<th>#</th>
 										<th>Service</th>
-										<th>Description</th>
+										<th>Coverage</th>
 										<th>Cost</th>
-										<th>Valid Till</th>
+										<th>Description</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -55,16 +55,16 @@ class FAQs extends Component {
 										</td>
 										<td>Table cell</td>
 										<td>
-											$150 <Badge variant="secondary">Sale</Badge>
+											$150 <Badge variant="warning">Sale</Badge>
 										</td>
 										<td>Table cell</td>
 									</tr>
 									<tr>
 										<td>2</td>
-										<td>Table cell</td>
-										<td>Table cell</td>
-										<td>Table cell</td>
-										<td>Table cell</td>
+										<td>Data BackUp</td>
+										<td>1 Device <Badge variant="light">Upto 100GB</Badge></td>
+										<td>$150 </td>
+										<td>In-home Service and you get the backup in a storage device</td>
 									</tr>
 									<tr>
 										<td>3</td>
