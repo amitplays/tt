@@ -13,7 +13,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="NavigationBarBody">
+      <div className="NavigationBarBody" >
         <Navbar
           fixed="top"
           collapseOnSelect
@@ -22,7 +22,8 @@ class Header extends Component {
           bg="dark"
           variant="dark"
         >
-          <Navbar.Brand href="/Home">
+          <br></br>
+          <Navbar.Brand hover href="/Home">
             <img
               src="/logo.svg"
               width="30"
@@ -33,10 +34,7 @@ class Header extends Component {
             {" TorontoTechie"}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Button href="/ContactForm" size="sm" variant="success">
-              Contact Us
-            </Button>
+          <Navbar.Collapse id="responsive-navbar-nav">  
 
             <Nav className="mr-auto" />
             <Nav className="navigationMenuLinks">

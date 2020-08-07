@@ -18,10 +18,8 @@ export default function SimpleCard() {
 		<div className="mainBody">
 			 {/*<Image width="100%" src={require("./banner.PNG")} fluid />*/} 
 			 <br />
-			 
 			<Carousel>
 				<Carousel.Item>
-				<Card.Img variant="top" src="" />
 					<Jumbotron className="Jumbo" fluid>
 						<h1>Complete Home and Individual Privacy Service	 </h1>
 						<br />

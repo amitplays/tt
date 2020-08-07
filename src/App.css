@@ -2,7 +2,6 @@
   text-align: center;
   src: local('Montserrat-Light'), url(./Components/Fonts/Montserrat-Light.ttf) format('opentype');
   font-family: 'Montserrat-Light';
-  color: white;
 
 }
 .Home{
@@ -16,16 +15,19 @@
 }
 
 .navigationMenuLinks{
-  color: blue !important;
+	
 }
-
-
 
 .NavigationBarBody{
-  background-color: #282c34 !important;
-
-	background-image: url("./Components/headerIllustration.png");
+	text-align: center !important;
+ 	display: inline !important;
+	margin-top: 10px;
 }
+
+.headerDiv{
+	background-color: black;
+}
+
 .navbar {
 	background-color: #000000b8 !important;	
 }
@@ -43,16 +45,18 @@
 } */
 
 .container {
-	max-width: 960px !important;
+}
+
+.mainBody{
+margin-top: 32px;
 }
 
 .content {
 	text-emphasis: left;
 }
-.NavigationBarBody{
-	text-align: center !important;
-  display: inline !important;
-	background-image: url("./Components/assets/bannertech.jpg");
+
+.homeCard{
+	margin-bottom: 30px;
 }
 
 .HomepageBodyImageDiv{

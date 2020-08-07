@@ -30,30 +30,32 @@ class HomePageBody extends Component {
         <HomeBanner> </HomeBanner>
         <Container>
         <i class="fa fa-shield-alt"/>
-          <h4> Why Choose us ?  </h4>
+          <h3> Why Choose us ?  </h3>
+          <br></br>
           <br></br>
           <Row fluid>
-            <Col sm className="row justify-content-center">
+            <Col sm className="row justify-content-center homeCard">
               <Fade bottom>
                 <Card
                   bg="dark"
                   border="dark"
-                  text="black"
+                  text="white"
                   style={{ width: "15rem" }}
                 >
-                  <Card.Header> Quick Resolution</Card.Header>
+                  <Card.Header> Technical support </Card.Header>
                   <Card.Body>
                     <Card.Text>
                       Secure all your home devices.
                       <i class="fa fa-shield-alt"/>
                     </Card.Text>
                   {/*<Card.Img variant="bottom"  src={require("./safe.svg")} />*/}
-                  <Button className="bannerBtn" style={{float:"right", margin:"20px"}} variant="secondary">Learn More</Button>
+                  <Button className="bannerBtn" style={{ margin:"15px"}} variant="warning">Learn More</Button>
                   </Card.Body>
                 </Card>
               </Fade>
             </Col>
-            <Col sm className="row justify-content-center">
+
+            <Col sm className="row justify-content-center homeCard">
               <Fade bottom>
                 <Card
                   bg="dark"
@@ -61,18 +63,19 @@ class HomePageBody extends Component {
                   border="dark"
                   style={{ width: "15rem" }}
                 >
-                  <Card.Header>Committed to Quality</Card.Header>
+                  <Card.Header>Secure your Tech</Card.Header>
                   <Card.Body>
                     <Card.Text>
                       We will help you instal all your software and hardware
                       upgradations.
                     </Card.Text>
-                    <Button className="bannerBtn" style={{float:"right", margin:"20px"}} variant="secondary">Learn More</Button>
+                    <Button className="bannerBtn" style={{float:"right", margin:"15px"}} variant="light">Learn More</Button>
                   </Card.Body>
                 </Card>
               </Fade>
             </Col>
-            <Col sm className="row justify-content-center">
+
+            <Col sm className="row justify-content-center homeCard">
               <Fade bottom>
                 <Card
                   bg="dark"
@@ -83,21 +86,17 @@ class HomePageBody extends Component {
                   <Card.Header>Low-cost Home Service</Card.Header>
                   <Card.Body>
                     <Card.Text>
-                      Our In-Home service cost is more affordable than most
-                      competitors !
+                      Get the best help at the comfort of your home !
                     </Card.Text>
-                    <Button className="bannerBtn" style={{float:"right", margin:"20px"}} variant="secondary">Learn More</Button>
+                    <Button className="bannerBtn" style={{float:"right", margin:"15px"}} variant="warning">Learn More</Button>
                   </Card.Body>
                 </Card>
               </Fade>
             </Col>
           </Row>
+
         </Container>
         <br />
-        <br />
-        <p>
-          <Button variant="success">Contact Us</Button>
-        </p>
         <br />
         <hr></hr>
         <Container fluid>
