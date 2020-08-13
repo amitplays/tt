@@ -9,7 +9,7 @@ class Header extends Component {
     this.state = {};
   }
 
-  ApplyBtn = () => {};
+  ApplyBtn = () => { };
 
   render() {
     return (
@@ -34,7 +34,7 @@ class Header extends Component {
             {" TorontoTechie"}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">  
+          <Navbar.Collapse id="responsive-navbar-nav">
 
             <Nav className="mr-auto" />
             <Nav className="navigationMenuLinks">

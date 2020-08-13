@@ -7,9 +7,9 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-      <div className="headerDiv">
-        <Header />
-      </div>
+        <div className="headerDiv">
+          {/* <Header /> */}
+        </div>
         <HomePageBody />
         <br></br>
         <LabelBottomNavigation></LabelBottomNavigation>
